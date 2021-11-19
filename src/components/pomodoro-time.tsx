@@ -41,7 +41,7 @@ function PomodoroTime(props: Props): JSX.Element {
     setWorking(true);
     setResting(true);
     setMainTime(props.pomodoroTime);
-    // audioStartWorking.play();
+    audioStartWorking.play();
   }, [setTimeConfig, setWorking, setResting, setMainTime, props.pomodoroTime]);
 
   const configurePause = React.useCallback(
@@ -49,7 +49,7 @@ function PomodoroTime(props: Props): JSX.Element {
       setTimeConfig(timeConfig);
       setWorking(timeConfig);
       setResting(true);
-      // audioStartWorking.play();
+      audioStartWorking.play();
     },
     [setTimeConfig, setWorking, setResting]
   );
@@ -61,10 +61,10 @@ function PomodoroTime(props: Props): JSX.Element {
       setMainTime(props.pomodoroTime);
       if (long) {
         setMainTime(props.longRestTime);
-        //  audioStopWorking.play();
+        audioStopWorking.play();
       } else {
         setMainTime(props.shortRestTime);
-        // audioStopWorking.play();
+        audioStopWorking.play();
       }
     },
     [
